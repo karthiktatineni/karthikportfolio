@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Analog Audio Spectrum Analyzer | Karthik</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <h1 class="logo">Karthik Tatineni</h1>
+    <nav class="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="section dark">
+   <div style="margin-top: 2rem;">
+      <div class="project-gallery">
+  <img src="spectrum.jpg" alt="Smart Bag 1" class="clickable-image"/>
+    <video controls width="480" style="border-radius: 10px; margin-bottom: 2rem;">
+  <source src="sepctrum.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<div id="lightbox" class="lightbox">
+  <span class="close-lightbox" onclick="closeLightbox()">✕</span>
+  <img id="lightbox-img" src="" alt="Full View" />
+</div>
+    <p style="line-height: 1.7; color: #cbd5e1;">
+      This analog audio spectrum analyzer visually represents audio signals using only passive and active electronic components, without microcontrollers or digital processing.
+      <br><br>
+      The circuit utilizes capacitors to separate frequency bands, zener diodes to clamp voltage levels, and rectifier diodes to drive LEDs based on amplitude.
+      <br><br>
+      The input signal is filtered into low, mid, and high frequencies using RC band-pass filters. Each band is connected to a peak detection circuit with a smoothing capacitor.
+      <br><br>
+      The resulting DC signal drives a transistor that lights up LEDs proportional to the signal strength. It creates a simple, real-time visual equalizer.
+      <br><br>
+      This project demonstrates core analog design principles like signal conditioning, passive filtering, and voltage regulation.
+      <br><br>
+      It’s ideal for DIY speaker builds, audio racks, and educational demos where real-time response is essential.
+      <br><br>
+      No programming is required — just circuit tuning. Enhancements can include audio amplifier input, stereo display, or adjustable sensitivity.
+    </p>
+  </section>
+
+  <footer class="footer">
+    © 2025 Karthik Tatineni. All rights reserved.
+  </footer>
+
+</body>
+</html>
+<script>
+  const img = document.querySelector('.clickable-image');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+  if (img) {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+    });
+  }
+
+  function closeLightbox() {
+    lightbox.style.display = 'none';
+  }
+
+  // ✅ Close lightbox on ESC key
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && lightbox.style.display === 'flex') {
+      closeLightbox();
+    }
+  });
+</script>

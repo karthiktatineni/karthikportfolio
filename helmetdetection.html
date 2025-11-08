@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Helmet Detection | Karthik</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <h1 class="logo">Karthik Tatineni</h1>
+    <nav class="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="section dark">
+    <h2>Helmet & Triple-Ride Detection</h2>
+   <div style="margin-top: 2rem;">
+  <div class="project-gallery">
+    <img src="helmet2.png" alt="Smart Bag 1" class="clickable-image" />
+
+    <video controls width="480" style="border-radius: 10px; margin-bottom: 2rem;">
+      <source src="2025-06-30 20-00-47.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
+<!-- Lightbox for fullscreen image -->
+<div id="lightbox" class="lightbox">
+  <span class="close-lightbox" onclick="closeLightbox()">✕</span>
+  <img id="lightbox-img" src="" alt="Full View" />
+</div>
+    <p style="line-height: 1.7; color: #cbd5e1;">
+      This project uses deep learning (YOLOv5 + CNN) to detect motorcyclists violating traffic rules—specifically those not wearing helmets or riding with more than two passengers.
+      <br><br>
+      The system is trained on a custom dataset and deployed on a system capable of processing live video feed from a roadside camera. Once a violation is detected, it highlights the rider and extracts the number plate for logging.
+      <br><br>
+      The detection model is optimized for accuracy and real-time performance using OpenCV and PyTorch.
+      <br><br>
+      Future enhancements include automatic challan generation and direct integration with traffic databases.
+    </p>
+  </section>
+
+  <footer class="footer">
+    © 2025 Karthik Tatineni. All rights reserved.
+  </footer>
+
+</body>
+</html>
+<script>
+  const img = document.querySelector('.clickable-image');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+  if (img) {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+    });
+  }
+
+  function closeLightbox() {
+    lightbox.style.display = 'none';
+  }
+
+  // ✅ Close lightbox on ESC key
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && lightbox.style.display === 'flex') {
+      closeLightbox();
+    }
+  });
+</script>
+

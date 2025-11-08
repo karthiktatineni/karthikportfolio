@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ambient Light Using ESP | Karthik</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <h1 class="logo">Karthik Tatineni</h1>
+    <nav class="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div style="margin-top: 2rem;">
+    <div class="project-gallery">
+      <video controls class="project-video">
+        <source src="amb.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="close-lightbox" onclick="closeLightbox()">✕</span>
+    <img id="lightbox-img" src="" alt="Full View" />
+  </div>
+
+  <section class="section dark">
+    <h2>Ambient Light Using ESP8266 + WLED</h2>
+    <p style="margin-top: 2rem; line-height: 1.7; color: #cbd5e1;">
+      This project transforms your viewing experience using ESP8266-powered ambient lighting synced with your screen. WS2812 LEDs are positioned behind the monitor and controlled using the WLED firmware, which receives color data from SignalRGB software running on the PC.
+      <br><br>
+      The ESP8266 microcontroller acts as a Wi-Fi-controlled light controller, running WLED firmware that receives UDP packets from SignalRGB. Each LED color reflects the dominant color on-screen, enhancing the atmosphere during movies or gaming.
+      <br><br>
+      The setup involves a 5V power supply, logic level shifter (if needed), ESP8266 board (like NodeMCU), and a strip of addressable WS2812B LEDs arranged around the monitor's rear.
+      <br><br>
+      SignalRGB software on Windows mirrors the screen’s edge colors and transmits data wirelessly to the ESP8266 running WLED. Configuration is done through the WLED web interface.
+      <br><br>
+      This project demonstrates seamless integration between PC software, embedded hardware, and addressable LEDs.
+      <br><br>
+      Features include:
+      - Real-time screen color sync
+      - Wi-Fi control with web UI
+      - Custom LED effects and brightness adjustment
+      <br><br>
+      Future enhancements can include adaptive brightness via sensors, mobile app control, or integration with other smart home systems.
+      <br><br>
+      It’s an ideal blend of embedded systems, automation, and aesthetic design for tech-savvy users and DIY lighting enthusiasts.
+    </p>
+  </section>
+
+  <footer class="footer">
+    © 2025 Karthik Tatineni. All rights reserved.
+  </footer>
+
+  <!-- Lightbox Script -->
+  <script>
+    const images = document.querySelectorAll('.clickable-image');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.style.display = 'none';
+    }
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && lightbox.style.display === 'flex') {
+        closeLightbox();
+      }
+    });
+  </script>
+</body>
+</html>

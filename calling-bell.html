@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Calling Bell | Karthik</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <h1 class="logo">Karthik Tatineni</h1>
+    <nav class="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="section dark">
+    <h2>Smart Calling Bell System</h2>
+        <div style="margin-top: 2rem;">
+      <div class="project-gallery">
+        <div style="margin-top: 2rem;">
+      <div class="project-gallery">
+  <img src="door.png" alt="Smart Bag 1" class="clickable-image"/>
+  <div id="lightbox" class="lightbox">
+  <span class="close-lightbox" onclick="closeLightbox()">✕</span>
+  <img id="lightbox-img" src="" alt="Full View" />
+</div>
+
+
+
+
+    <p style="line-height: 1.7; color: #cbd5e1;">
+      The Smart Calling Bell System uses an ESP32 microcontroller and Bylink app to notify home occupants when a visitor presses the bell. A piezo buzzer generates a doorbell sound,Person at the door apears in Bylink interface
+      <br><br>
+      This project ensures that even in noisy environments or when headphones are worn, the presence of a visitor isn’t missed. It can also be expanded to send mobile alerts or integrate with a camera.
+      <br><br>
+      The system uses digital input from a tactile push button, which triggers both sound output and display update logic.
+      <br><br>
+      It is compact and suitable for smart homes, offices, and accessible homes for the elderly or hearing impaired.
+      <br><br>
+      Built with Arduino IDE and ESP32 libraries, it’s reliable, power-efficient, and has OTA update support.
+      <br><br>
+      Future versions will include photo capture, cloud logging, and voice alert features.
+    </p>
+  </section>
+
+  <footer class="footer">
+    © 2025 Karthik Tatineni. All rights reserved.
+  </footer>
+
+</body>
+</html>
+<script>
+  const img = document.querySelector('.clickable-image');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+  if (img) {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+    });
+  }
+
+  function closeLightbox() {
+    lightbox.style.display = 'none';
+  }
+
+  // ✅ Close lightbox on ESC key
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && lightbox.style.display === 'flex') {
+      closeLightbox();
+    }
+  });
+</script>

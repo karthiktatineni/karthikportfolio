@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Anti-Theft Bag | Karthik</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <h1 class="logo">Karthik Tatineni</h1>
+    <nav class="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="section dark">
+    <h2>Smart Anti-Theft Bag</h2>
+
+    <div style="margin-top: 2rem;">
+      <div class="project-gallery">
+        <img src="bag.jpg" alt="Smart Bag 1" class="clickable-image" />
+
+        <video controls width="480" style="border-radius: 10px; margin-bottom: 2rem;">
+          <source src="BEGV7712.MP4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+
+    <!-- Lightbox for fullscreen image -->
+    <div id="lightbox" class="lightbox">
+      <span class="close-lightbox" onclick="closeLightbox()">✕</span>
+      <img id="lightbox-img" src="" alt="Full View" />
+    </div>
+
+    <p style="margin-top: 2rem; line-height: 1.7; color: #cbd5e1;">
+      The Smart Anti-Theft Bag is a compact, IoT-powered backpack that improves personal security using RFID authentication and real-time Telegram alerts. Built using an ESP8266 microcontroller, the system ensures that only authorized users can access the bag's contents.
+      <br><br>
+      When the bag’s zipper is opened, a 5-second timer starts. If no valid RFID card is scanned during this time, a buzzer sounds and a Telegram alert is sent. If the RFID scan is valid, the alarm remains off and access is granted.
+      <br><br>
+      This project uses an MFRC522 RFID reader, a piezo buzzer, a physical switch for zipper detection, and Wi-Fi-enabled cloud messaging via Telegram's Bot API. The logic was programmed using the Arduino IDE with ESP8266 libraries.
+      <br><br>
+      Key design considerations included timing precision, network reliability, and power optimization. The hardware is compact enough to fit inside any standard backpack.
+      <br><br>
+      This project demonstrates expertise in embedded development, IoT integration, and secure user access systems. It can be expanded with GPS tracking, fingerprint access, or a mobile app in the future.
+    </p>
+  </section>
+
+  <footer class="footer">
+    © 2025 Karthik Tatineni. All rights reserved.
+  </footer>
+
+</body>
+</html>
+
+<script>
+  const img = document.querySelector('.clickable-image');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+  if (img) {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+    });
+  }
+
+  function closeLightbox() {
+    lightbox.style.display = 'none';
+  }
+
+  // Close lightbox on ESC key
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && lightbox.style.display === 'flex') {
+      closeLightbox();
+    }
+  });
+</script>

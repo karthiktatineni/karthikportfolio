@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESP Joke Teller | Karthik</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Make video responsive but smaller */
+    .responsive-video {
+      max-width: 60%; /* Smaller size */
+      height: auto;
+      display: block;
+      margin: 1rem auto;
+      border-radius: 10px;
+    }
+
+    /* Box style similar to TravelMate */
+    .project-box {
+      background-color: #1e293b; /* Match your site's box color */
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 800px;
+      margin: 2rem auto;
+      color: #cbd5e1;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <h1 class="logo">Karthik Tatineni</h1>
+    <nav class="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="project-box">
+    <h3>ESP Joke Teller</h3>
+    
+
+    <video controls class="responsive-video">
+      <source src="joke-teller-demo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <p>
+      The ESP Joke Teller is a fun IoT project built with an ESP8266 microcontroller and a 16x2 LCD display. 
+      It fetches jokes from the internet via Wi-Fi and displays the setup on the LCD. 
+      A push button lets the user reveal the punchline, making it an interactive and entertaining gadget.
+    </p>
+
+    <p>
+      The system uses a 16x2 LCD with I2C interface for simple wiring, and the ESP connects to an online joke API 
+      such as the Official Joke API. The program is written in Arduino IDE using <code>ESP8266WiFi</code> 
+      and <code>LiquidCrystal_I2C</code> libraries.
+    </p>
+
+    <p>
+      This project helped improve my skills in API integration, LCD handling, and user interaction with microcontrollers. 
+      Possible upgrades include text scrolling, multilingual jokes, or voice output using a speaker module.
+    </p>
+  </div>
+
+  <footer class="footer">
+    © 2025 Karthik Tatineni. All rights reserved.
+  </footer>
+
+</body>
+</html>

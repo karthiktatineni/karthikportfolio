@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Personal AI Bot | Karthik Tatineni</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <h1 class="logo">Karthik Tatineni</h1>
+    <nav class="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Project Section -->
+  <section class="section dark">
+    <h2>Personal AI Bot Using Botpress</h2>
+
+    <!-- Project Gallery -->
+    <div class="project-gallery" style="margin-top: 2rem;">
+      <img src="bot.png" alt="AI Bot Screenshot" class="clickable-image" />
+      <img src="bot2.png" alt="AI Bot Screenshot" class="clickable-image" />
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+      <span class="close-lightbox" onclick="closeLightbox()">✕</span>
+      <img id="lightbox-img" src="" alt="Full View" />
+    </div>
+
+    <!-- Project Description -->
+    <p style="line-height: 1.7; color: #cbd5e1; margin-top: 2rem;">
+      This project is a personalized AI bot trained on my resume and portfolio details. Built using Botpress and OpenAI, it allows visitors to ask questions like:
+      <br><br>
+      • “What are Karthik’s skills?”<br>
+      • “Tell me about his projects in IoT.”<br>
+      • “Where did he study?”<br><br>
+      The bot is hosted online and trained with FAQs, resume content, and personalized replies using knowledge base integration. It can be used by recruiters, visitors, or collaborators to quickly understand my background and capabilities.
+      <br><br>
+      Features:
+      <ul style="color: #cbd5e1;">
+        <li>Botpress-based no-code visual flow setup</li>
+        <li>Custom knowledge base from PDF/resume</li>
+        <li>OpenAI GPT integration</li>
+        <li>Deployed and embeddable on any page</li>
+      </ul>
+      <br>
+      Future improvements include analytics on bot usage, voice assistant capability, and multilingual responses.
+      <br><br>
+      The Bot is implemented on this page.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    © 2025 Karthik Tatineni. All rights reserved.
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    const imgs = document.querySelectorAll('.clickable-image');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    imgs.forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.style.display = 'none';
+    }
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && lightbox.style.display === 'flex') {
+        closeLightbox();
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Home Automation | Karthik</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <h1 class="logo">Karthik Tatineni</h1>
+    <nav class="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="section dark">
+    <h2>Smart Home Automation</h2>
+    <div style="margin-top: 2rem;">
+      <div class="project-gallery">
+  <img src="home1.jpg" alt="Smart Bag 1" class="clickable-image"/>
+<video controls width="480" style="border-radius: 10px; margin-bottom: 2rem;">
+  <source src="home.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<!-- Lightbox for fullscreen image -->
+<div id="lightbox" class="lightbox">
+  <span class="close-lightbox" onclick="closeLightbox()">✕</span>
+  <img id="lightbox-img" src="" alt="Full View" />
+</div>
+
+
+    <p style="line-height: 1.7; color: #cbd5e1;">
+      This smart home automation system uses ESP8266 to wirelessly control appliances like lights and fans. The system is integrated with Alexa using Sinric Pro, enabling voice-controlled operation for daily convenience.
+      <br><br>
+      Commands like “turn on light” or “switch off fan” are recognized by Alexa and executed by the ESP8266 microcontroller through relay modules. A web dashboard allows remote control even without voice input.
+      <br><br>
+      Key features include support for multiple devices, real-time feedback on device status, and integration with existing home switches.
+      <br><br>
+      The system uses secure APIs from Sinric Pro for communication and is coded using the Arduino IDE with Wi-Fi and relay libraries.
+      <br><br>
+      Practical applications include elderly care, home security, energy saving, and automation of routine tasks.
+      <br><br>
+      The hardware is compact and non-invasive, allowing easy installation in any existing home wiring system. It also supports scheduling and scene creation.
+      <br><br>
+      Future upgrades include app-based notifications, energy monitoring, and AI-based automation logic based on habits and time of day.
+    </p>
+  </section>
+
+  <footer class="footer">
+    © 2025 Karthik Tatineni. All rights reserved.
+  </footer>
+
+</body>
+</html>
+<script>
+  const img = document.querySelector('.clickable-image');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+  if (img) {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+    });
+  }
+
+  function closeLightbox() {
+    lightbox.style.display = 'none';
+  }
+
+  // ✅ Close lightbox on ESC key
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && lightbox.style.display === 'flex') {
+      closeLightbox();
+    }
+  });
+</script>

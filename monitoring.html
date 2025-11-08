@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Environmental Monitoring | Karthik</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <h1 class="logo">Karthik Tatineni</h1>
+    <nav class="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="section dark">
+    <h2>Environmental Monitoring System</h2>
+<div style="margin-top: 2rem;">
+      <div class="project-gallery">
+  <img src="moni1.jpg" alt="Smart Bag 1" class="clickable-image"/>
+  <img src="moni2.jpg" alt="Smart Bag 1" class="clickable-image" />
+  <img src="moni3.jpg" alt="Smart Bag 1 "class="clickable-image" />
+  
+  <div id="lightbox" class="lightbox">
+  <span class="close-lightbox" onclick="closeLightbox()">✕</span>
+  <img id="lightbox-img" src="" alt="Full View" />
+</div>
+
+    <p style="line-height: 1.7; color: #cbd5e1;">
+      This project features a smart environmental monitoring system powered by an ESP8266 microcontroller and DHT11 sensor to track temperature and humidity. It collects and displays real-time data on a custom-designed webpage hosted via Wi-Fi.
+      <br><br>
+      The data is auto-refreshed every few seconds and color-coded based on safe or unsafe ranges. This makes it ideal for monitoring rooms, server racks, greenhouses, and remote weather stations.
+      <br><br>
+      The design uses HTML, CSS, and JavaScript for the web interface and the Arduino IDE for the firmware.
+      <br><br>
+      It includes a simple REST API interface for data retrieval, allowing other systems or mobile apps to integrate easily.
+      <br><br>
+      The hardware is low-power and uses micro-USB or battery input, making it great for portable or solar-powered setups.
+      <br><br>
+      The dashboard is hosted directly on the ESP8266 and loads instantly without needing any cloud support.
+      <br><br>
+      This project demonstrates my ability to integrate sensors, handle real-time web communication, and build embedded UIs.
+      <br><br>
+      Future upgrades include air quality sensing (MQ135), CO2 monitoring, cloud logging, and mobile alerts.
+    </p>
+  </section>
+
+  <footer class="footer">
+    © 2025 Karthik Tatineni. All rights reserved.
+  </footer>
+
+</body>
+</html>
+<script>
+  const images = document.querySelectorAll('.clickable-image');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+  images.forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.style.display = 'none';
+  }
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && lightbox.style.display === 'flex') {
+      closeLightbox();
+    }
+  });
+</script>
+
